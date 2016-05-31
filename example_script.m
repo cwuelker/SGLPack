@@ -33,7 +33,7 @@ fprintf ('\nSGLPack - Fast spherical Gauss-Laguerre Fourier transforms\n');
 fprintf ('(Copyright 2016 Christian Wuelker, Juergen Prestin)\n\n');
 
 % path to SGLPack
-path = '/home/wuelker/www/SGLPack';
+path = '/home/wuelker/www/SGLPack-master';
 
 % add half-range Hermite quadrature and fast spherical Fourier transforms
 % to path
