@@ -30,7 +30,7 @@
 
 function abcissae = half_range_Hermite_quadrature_abcissae_precomp (n, path)
 
-filename_abcissae = sprintf ('%s/half-range Hermite quadrature/precomp/%d_100_digits_abcissae.txt', path, n);
+filename_abcissae = sprintf ('%s/half-range_Hermite_quadrature/precomp/%d_100_digits_abcissae.txt', path, n);
 
 file_id_abcissae = fopen (filename_abcissae, 'r');
 
