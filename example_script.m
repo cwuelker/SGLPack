@@ -86,7 +86,7 @@ fclose (file_id_FSFT_P);
 
 % generate random SGL Fourier coefficients
 % -------------------------------------------------------------------------
-fprintf ('>> Generating random SGL Fourier coefficients... ');
+fprintf ('<< Generating random SGL Fourier coefficients... ');
 
 F_Fourier = zeros (B, B, 2 * B - 1);
 
@@ -103,7 +103,7 @@ end
 fprintf ('done.\n');
 % -------------------------------------------------------------------------
 
-fprintf ('>> Performing inverse fast SGL Fourier transform (iFSGLFT) to reconstruct function values from SGL Fourier coefficients... ');
+fprintf ('<< Performing inverse fast SGL Fourier transform (iFSGLFT) to reconstruct function values from SGL Fourier coefficients... ');
 
 tic;
 
@@ -113,7 +113,7 @@ F_recon = iFSGLFT_Clenshaw (B, FSFT_P', FSFT_N_sort, Hermite_r, F_Fourier);
 runtime_inverse = toc;
 
 fprintf ('done.\n');
-fprintf ('>> Performing fast SGL Fourier transform (FSGLFT) to reconstruct SGL Fourier coefficients from reconstructed function values... ');
+fprintf ('<< Performing fast SGL Fourier transform (FSGLFT) to reconstruct SGL Fourier coefficients from reconstructed function values... ');
 
 tic;
 
@@ -127,7 +127,7 @@ fprintf ('done.\n');
 
 runtime = runtime_inverse + runtime_forward;
 
-fprintf ('>> Total runtime: %f s (%.0f%% forward, %.0f%% inverse)\n', runtime, round (100.0 * runtime_forward / runtime), round (100.0 * runtime_inverse / runtime));
+fprintf ('<< Total runtime: %f s (%.0f%% forward, %.0f%% inverse)\n', runtime, round (100.0 * runtime_forward / runtime), round (100.0 * runtime_inverse / runtime));
 
 % determine maximum and relative transformation error
 % -------------------------------------------------------------------------
@@ -154,7 +154,7 @@ for m = - B + 1 : B - 1
  end
 end
 
-fprintf ('>> Maximum (relative) transformation error: %e (%e, respectively)\n\n', max_error, rel_error);
+fprintf ('<< Maximum (relative) transformation error: %e (%e, respectively)\n\n', max_error, rel_error);
 % -------------------------------------------------------------------------
 
 % garbage collect
