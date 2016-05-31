@@ -30,6 +30,8 @@
 
 function data_trans = DRT_Clenshaw (B, l, r, data)
 
+r_squared = r .^ 2;
+
 data_trans = zeros (B - l, 1);
 data_temp = zeros (4 * B, 1);
 
