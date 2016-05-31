@@ -127,7 +127,7 @@ fprintf ('done.\n');
 
 runtime = runtime_inverse + runtime_forward;
 
-fprintf ('<< Total runtime: %f s (%.0f%% forward, %.0f%% inverse)\n', runtime, round (100.0 * runtime_forward / runtime), round (100.0 * runtime_inverse / runtime));
+fprintf ('<< Total runtime: %f s (%d%% forward, %d%% inverse)\n', runtime, round (100.0 * runtime_forward / runtime), round (100.0 * runtime_inverse / runtime));
 
 % determine maximum and relative transformation error
 % -------------------------------------------------------------------------
