@@ -30,7 +30,7 @@
 
 function adapted_weights = half_range_Hermite_quadrature_adapted_weights_precomp (n, path)
 
-filename_adapted_weights = sprintf ('%s/half-range Hermite quadrature/precomp/%d_100_digits_adapted_weights.txt', path, n);
+filename_adapted_weights = sprintf ('%s/half-range_Hermite_quadrature/precomp/%d_100_digits_adapted_weights.txt', path, n);
 
 file_id_adapted_weights = fopen (filename_adapted_weights, 'r');
 
