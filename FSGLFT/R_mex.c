@@ -96,9 +96,7 @@ void mexFunction (int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[])
    {
       factor *= index; 
    }
-/*   
-   factor *= factorial (n_l_difference - 1);
-*/   
+  
    R_val *= sqrt (factor);
    
    R[0] = R_val;
