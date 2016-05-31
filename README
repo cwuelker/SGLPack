@@ -4,7 +4,7 @@ Dear user,
 
 Thank you very much for your interest in our fast SGL Fourier transforms. To use our Matlab implementation on your system, please follow these instructions:
 
-1. Go to https://github.com/cwuelker/SGLPack and download the entire repository 'SGLPack'.
+1. Download the entire repository 'SGLPack' from GitHub.
 
 2. Use Matlabs 'mex' function to build 'R_mex.c' in folder 'FSGLFT' (if using Matlabs MEX is not convenient for you, simply exchange the function 'R_mex' by the function 'R' where needed).
 
