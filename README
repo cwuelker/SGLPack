@@ -10,7 +10,7 @@ Thank you very much for your interest in our fast SGL Fourier transforms. To use
 
 3. Use the script 'example_script.m' to test whether the software works correctly on your system. For this purpose, just set your local path in line 36, choose a bandwidth B in line 52, and run the script in Matlab.
 
-Please note that the provided software works with bandwidths B = 1, 2, 4, 8, 16, 32. If you would like to work with higher bandwidths (up to B = 64 is possible) or other bandwidths than the powers of 2, I can provide you with the necessary precomputed data.
+Please note that the provided software works with bandwidths B = 1, 2, 4, 8, 16, 32. If you would like to work with higher bandwidths (up to B = 64 is possible) or other bandwidths than the powers of 2, we can provide you with the necessary precomputed data.
 
 In our implementation, the function values are currently stored in a 2B x 2B x 2B array, using the indices i, j, k as in the paper (http://arxiv.org/pdf/1604.05140.pdf); the SGL Fourier coefficients are stored in a B x B x 2B-1 array, using the indices n, l, m as demonstrated in lines 91–101 of the example script.
 
