@@ -28,7 +28,7 @@
 %  
 %   See the accompanying LICENSE file for details.
 
-function [abcissae, weights] = half_range_Hermite_quadrature (n, ~)
+function [abcissae, weights] = half_range_Hermite_quadrature (n)
 
 format long;
 
