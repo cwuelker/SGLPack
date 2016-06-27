@@ -1,4 +1,3 @@
-
 //
 //        SGLPack - Fast spherical Gauss-Laguerre Fourier transforms        
 //   
