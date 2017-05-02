@@ -1,3 +1,5 @@
+NEWS! NEWS! NEWS! There will be a C++ version of our fast SGL Fourier transforms available soon. This new version uses SpharmonicKit (see http://www.cs.dartmouth.edu/~geelong/sphere), and supports bandwidths of up to 256. Contact us if you are interested in the prelimiary version.
+
 
 Dear user,
 
@@ -30,5 +32,7 @@ Ratzeburger Allee 160
 23562 Lübeck
 Germany
 -------------------------------
+Mail: wuelker@math.uni-luebeck.de
 Tel.: 0451-3101-6065
+
 
