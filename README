@@ -1,4 +1,4 @@
-NEWS! This is the new C++ version of our fast SGL Fourier transforms. You can still download the Matlab version here: http://www.math.uni-luebeck.de/mitarbeiter/wuelker/SGLPack_matlab.zip
+13/05/17 NEWS! This is the new C++ version of our fast SGL Fourier transforms. You can still download the Matlab version here: http://www.math.uni-luebeck.de/mitarbeiter/wuelker/SGLPack_matlab.zip. The new C++ implementation uses SpharmonicKit; see http://www.cs.dartmouth.edu/~geelong/sphere for further information.
 
 
 Dear user,
