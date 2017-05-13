@@ -12,9 +12,9 @@ In order to use our C++ implementation on your system, please follow these instr
 
 2. Install SpharmonicKit (include/SpharmonicKit27.zip) on your system.
 
-3. Set your path preferences in cmake/CMakeLists.txt, then run cmake.
+3. Set your path preferences in cmake/CMakeLists.txt, then run cmake (>> cmake cmake).
 
-4.
+4. ...
 
 Please note that the provided software works with bandwidths B = 8, 16, 32, 64, 128, 256.
 
