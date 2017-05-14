@@ -18,7 +18,7 @@ In order to test our C++ implementation on your system, please follow these inst
 
 5. Run the example program (>> ./SGLPack).
 
-SGLPack currently works with bandwidths B = 8, 16, 32, 64, 128, 256. The function values are stored in a three-dimensional array, using the indices i, j, k as in the paper (http://arxiv.org/pdf/1604.05140.pdf); the SGL Fourier coefficients are stored in three-dimensional array as well, using the indices n, l, m as demonstrated in line 105 of example.cpp. Please note that there is only as much space allocated as required, i.e., no space is wasted by using three-dimensional arrays.
+SGLPack currently works with bandwidths B = 8, 16, 32, 64, 128, 256. The function values are stored in two three-dimensional arrays for the real and imaginary part, respectively, using the indices i, j, k as in the paper (http://arxiv.org/pdf/1604.05140.pdf); the SGL Fourier coefficients are stored in three-dimensional array as well, using the indices n, l, m as demonstrated in lines 105 and 106 of example.cpp. Please note that there is only as much space allocated as required, i.e., no space is wasted by using three-dimensional arrays.
 
 If you have any questions, please do not hesitate to contact us.
 
