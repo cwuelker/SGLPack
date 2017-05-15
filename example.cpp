@@ -135,7 +135,7 @@ int main ()
 // ----------------------------------------------------------------------------------------------------   
    
    double error_sqrd, abs_f_hat_sqrd;
-   double max_error_sqrd = 0.0;
+   double abs_error_sqrd = 0.0;
    double rel_error_sqrd = 0.0;
    
    int n_temp, n_temp_2;
@@ -150,9 +150,9 @@ int main ()
          {            
             error_sqrd = pow (f_hat_real[n - 1][l][m + l] - f_hat_recon_real[n - 1][l][m + l], 2.0) + pow (f_hat_imag[n - 1][l][m + l] - f_hat_recon_imag[n - 1][l][m + l], 2.0);
             
-            if ( error_sqrd > max_error_sqrd )
+            if ( error_sqrd > abs_error_sqrd )
             {
-               max_error_sqrd = error_sqrd;
+               abs_error_sqrd = error_sqrd;
                 
                n_temp = n;
                l_temp = l;
@@ -173,10 +173,10 @@ int main ()
       }
    }
    
-   double max_error = sqrt (max_error_sqrd);
+   double abs_error = sqrt (abs_error_sqrd);
    double rel_error = sqrt (rel_error_sqrd);
    
-   printf (">> Maximum absolute reconstruction error: %e (at n = %d, l = %d, m = %d)\n", max_error, n_temp, l_temp, m_temp);
+   printf (">> Maximum absolute reconstruction error: %e (at n = %d, l = %d, m = %d)\n", abs_error, n_temp, l_temp, m_temp);
    printf (">> Maximum relative reconstruction error: %e (at n = %d, l = %d, m = %d)\n", rel_error, n_temp_2, l_temp_2, m_temp_2);
    
    for ( int i = 0; i < 2 * B; ++i )
