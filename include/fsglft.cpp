@@ -1,11 +1,11 @@
 //
-//        SGLPack 1.0 - Fast spherical Gauss-Laguerre Fourier transforms        
+//        SGLPack 1.1 - Fast spherical Gauss-Laguerre Fourier transforms        
 //   
 //  
-//   Contact: Christian Wuelker, M.Sc.
-//            wuelker@math.uni-luebeck.de
+//   Contact: Christian Wuelker
+//            christian.wuelker@gmail.com
 //  
-//   Copyright 2017  Christian Wuelker, Juergen Prestin
+//   Copyright 2019  Christian Wuelker, Juergen Prestin
 //
 //
 //     SGLPack is free software; you can redistribute it and/or modify
