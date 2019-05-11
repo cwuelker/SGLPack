@@ -45,7 +45,7 @@
 
 using namespace std;
 
-void indsglft (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag)
+void ndsglft (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag)
 {   
    long double R_nl;   
    double* Y_lm = new double[2];
@@ -80,7 +80,7 @@ void indsglft (int B, int M, double** x, double* f_real, double* f_imag, double*
    return;
 }
 
-void indsglft_adjoint (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag)
+void ndsglft_adjoint (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag)
 {   
    long double R_nl;   
    double* Y_lm = new double[2];
@@ -115,7 +115,7 @@ void indsglft_adjoint (int B, int M, double** x, double* f_real, double* f_imag,
    return;
 }
 
-void infsglft (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, int nfft_sigma, int nfft_q)
+void nfsglft (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, int nfft_sigma, int nfft_q)
 {      
    const double pi = 3.141592653589793238462643383279502884197169399;
    
@@ -532,7 +532,7 @@ void infsglft (int B, int M, double** x, double* f_real, double* f_imag, double*
    return;
 }
 
-void infsglft_adjoint (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, int nfft_sigma, int nfft_q)
+void nfsglft_adjoint (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, int nfft_sigma, int nfft_q)
 {      
    const double pi = 3.141592653589793238462643383279502884197169399;
    
@@ -885,7 +885,7 @@ void infsglft_adjoint (int B, int M, double** x, double* f_real, double* f_imag,
    return;
 }
 
-void nfsglft_golub_van_loan (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, double*** f_hat_real_ground_truth, double*** f_hat_imag_ground_truth, int n_iter, int nfft_sigma, int nfft_q, char* preferences)
+void infsglft_golub_van_loan (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, double*** f_hat_real_ground_truth, double*** f_hat_imag_ground_truth, int n_iter, int nfft_sigma, int nfft_q, char* preferences)
 {      
    char* filename_max_abs_error = new char[1000];
    char* filename_max_rel_error = new char[1000];
@@ -944,7 +944,7 @@ void nfsglft_golub_van_loan (int B, int M, double** x, double* f_real, double* f
       }
    }
    
-   infsglft (B, M, x, r_real, r_imag, f_hat_real, f_hat_imag, nfft_sigma, nfft_q);
+   nfsglft (B, M, x, r_real, r_imag, f_hat_real, f_hat_imag, nfft_sigma, nfft_q);
    
    long double alpha, beta, enumerator, denominator;
    
@@ -961,7 +961,7 @@ void nfsglft_golub_van_loan (int B, int M, double** x, double* f_real, double* f
       
       if ( iter == 0 )
       {
-         infsglft_adjoint (B, M, x, r_real, r_imag, p_real, p_imag, nfft_sigma, nfft_q);
+         nfsglft_adjoint (B, M, x, r_real, r_imag, p_real, p_imag, nfft_sigma, nfft_q);
          
          enumerator = 0.0;
          
@@ -980,7 +980,7 @@ void nfsglft_golub_van_loan (int B, int M, double** x, double* f_real, double* f
       {                  
          denominator = enumerator;
          
-         infsglft_adjoint (B, M, x, r_real, r_imag, A_T_r_real, A_T_r_imag, nfft_sigma, nfft_q);
+         nfsglft_adjoint (B, M, x, r_real, r_imag, A_T_r_real, A_T_r_imag, nfft_sigma, nfft_q);
          
          enumerator = 0.0;
          
@@ -1013,7 +1013,7 @@ void nfsglft_golub_van_loan (int B, int M, double** x, double* f_real, double* f
          }
       }
       
-      infsglft (B, M, x, A_p_real, A_p_imag, p_real, p_imag, nfft_sigma, nfft_q);
+      nfsglft (B, M, x, A_p_real, A_p_imag, p_real, p_imag, nfft_sigma, nfft_q);
       
       denominator = 0.0;
       
@@ -1126,12 +1126,12 @@ void nfsglft_golub_van_loan (int B, int M, double** x, double* f_real, double* f
    return;
 }
 
-void nfsglft_bjoerck (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, double*** f_hat_real_ground_truth, double*** f_hat_imag_ground_truth, int n_iter, int nfft_sigma, int nfft_q, char* preferences)
+void infsglft_bjoerck (int B, int M, double** x, double* f_real, double* f_imag, double*** f_hat_real, double*** f_hat_imag, double*** f_hat_real_ground_truth, double*** f_hat_imag_ground_truth, int n_iter, int nfft_sigma, int nfft_q, char* preferences)
 {      
    double* r_k_real = new double[M];
    double* r_k_imag = new double[M];
    
-   indsglft (B, M, x, r_k_real, r_k_imag, f_hat_real, f_hat_imag);
+   ndsglft (B, M, x, r_k_real, r_k_imag, f_hat_real, f_hat_imag);
    
    for ( int i = 0; i < M; ++i )
    {
@@ -1154,7 +1154,7 @@ void nfsglft_bjoerck (int B, int M, double** x, double* f_real, double* f_imag, 
       }
    }
    
-   indsglft_adjoint (B, M, x, r_k_real, r_k_imag, p_k_real, p_k_imag);
+   ndsglft_adjoint (B, M, x, r_k_real, r_k_imag, p_k_real, p_k_imag);
 
    double*** s_k_real = new double**[B];
    double*** s_k_imag = new double**[B];
@@ -1191,7 +1191,7 @@ void nfsglft_bjoerck (int B, int M, double** x, double* f_real, double* f_imag, 
       printf ("\n%d/%d... ", k + 1, n_iter);
       fflush(stdout);
       
-      indsglft (B, M, x, q_k_real, q_k_imag, p_k_real, p_k_imag);
+      ndsglft (B, M, x, q_k_real, q_k_imag, p_k_real, p_k_imag);
       
       double alpha_k = 0.0;
       
@@ -1217,7 +1217,7 @@ void nfsglft_bjoerck (int B, int M, double** x, double* f_real, double* f_imag, 
          r_k_imag[i] -= alpha_k * q_k_imag[i];
       }
       
-      indsglft_adjoint (B, M, x, r_k_real, r_k_imag, s_k_real, s_k_imag);
+      ndsglft_adjoint (B, M, x, r_k_real, r_k_imag, s_k_real, s_k_imag);
       
       gamma_k_plus_1 = 0.0;
       
